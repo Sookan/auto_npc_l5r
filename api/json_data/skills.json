@@ -1,0 +1,506 @@
+{
+  "High Skills": [
+    {
+      "name": "Acting",
+      "trait": "Awareness",
+      "subTypes": ["Social Skill", "Perform Skill"],
+      "emphases": ["Clan", "Gender", "Profession"],
+      "description": "A measure of one’s ability to convincingly portray another, either for theater or espionage. Covers Rokugani theater styles: Kabuki and Noh. TN increases based on how dissimilar the impersonated role is. Can be countered with Investigation.",
+      "masteryAbilities": [
+        "Rank 3: The TN to create a disguise is reduced by 5.",
+        "Rank 5: The TN to create a disguise is reduced by 10 (total).",
+        "Rank 7: The TN to create a disguise is reduced by 15 (total)."
+      ]
+    },
+    {
+      "name": "Artisan",
+      "trait": "Awareness",
+      "subTypes": ["Macro-skill"],
+      "emphases": ["Varies by sub-skill"],
+      "description": "Represents talent in noble arts such as bonsai, ikebana, origami, painting, poetry, etc. Rolls create works of art with GM-defined TNs.",
+      "masteryAbilities": []
+    },
+    {
+      "name": "Calligraphy",
+      "trait": "Intelligence",
+      "subTypes": ["Artisan Skill"],
+      "emphases": ["Cipher", "High Rokugani"],
+      "description": "An artistic skill used for encoding and decoding messages or impressing through refined script. Cipher provides one clan-specific code. High Rokugani reflects formal court language.",
+      "masteryAbilities": [
+        "Rank 5: Gain +10 when attempting to break a cipher."
+      ]
+    },
+    {
+      "name": "Courtier",
+      "trait": "Awareness",
+      "subTypes": ["Social Skill"],
+      "emphases": ["Gossip", "Manipulation", "Rhetoric"],
+      "description": "Essential for courtly manipulation, spreading rumors, or steering conversation. Can be used offensively in court conflicts. Gossip targets' Glory affects TN.",
+      "masteryAbilities": [
+        "Rank 3: Gain +3 Insight.",
+        "Rank 5: Gain +1k0 to all Contested Courtier Rolls.",
+        "Rank 7: Gain additional +7 Insight (total +10 from Courtier)."
+      ]
+    },
+    {
+      "name": "Divination",
+      "trait": "Intelligence",
+      "subTypes": [],
+      "emphases": ["Astrology", "Kawaru"],
+      "description": "Used to interpret omens or future events through celestial observation or the casting of symbolic objects. Can be attempted once daily. Results are vague.",
+      "masteryAbilities": [
+        "Rank 5: Second roll does not cost a Void Point."
+      ]
+    },
+    {
+      "name": "Etiquette",
+      "trait": "Awareness",
+      "subTypes": ["Social Skill"],
+      "emphases": ["Bureaucracy", "Conversation", "Courtesy"],
+      "description": "The defensive social skill used in court to avoid missteps or manipulation. Key to navigating hierarchy and avoiding insult. Used in contested social defenses.",
+      "masteryAbilities": [
+        "Rank 3: Gain +3 Insight.",
+        "Rank 5: Gain +1k0 to all Contested Etiquette Rolls.",
+        "Rank 7: Gain additional +7 Insight (total +10 from Etiquette)."
+      ]
+    },
+    {
+      "name": "Games",
+      "trait": "Various",
+      "subTypes": ["Macro-skill"],
+      "emphases": ["Varies by sub-skill"],
+      "description": "Includes strategy and parlor games like Go, Shogi, Sadane, etc. Contested Rolls made against another player are common.",
+      "masteryAbilities": []
+    },
+    {
+      "name": "Investigation",
+      "trait": "Perception",
+      "subTypes": [],
+      "emphases": ["Interrogation", "Notice", "Search"],
+      "description": "Used to assess environments or gather clues, often for magistrates or detectives. Failed rolls can be retried with delay and increased TN.",
+      "masteryAbilities": [
+        "Rank 3: Retry Search Emphasis without TN increase.",
+        "Rank 5: +5 bonus to all Contested Investigation Rolls.",
+        "Rank 7: Third attempt on Search Emphasis allowed."
+      ]
+    },
+    {
+      "name": "Lore",
+      "trait": "Intelligence",
+      "subTypes": ["Macro-skills"],
+      "emphases": ["Varies by sub-skill"],
+      "description": "Knowledge-based skill covering everything from History to Maho. Used to determine familiarity with the subject.",
+      "masteryAbilities": []
+    },
+    {
+      "name": "Medicine",
+      "trait": "Intelligence",
+      "subTypes": [],
+      "emphases": ["Antidotes", "Disease", "Herbalism", "Non-Humans", "Wound Treatment"],
+      "description": "Used to treat physical and spiritual injuries. Healing requires kits. One roll per day. TN varies by condition treated.",
+      "masteryAbilities": [
+        "Rank 5: Wounds healed increased by +1k0."
+      ]
+    },
+    {
+      "name": "Meditation",
+      "trait": "Void",
+      "subTypes": [],
+      "emphases": ["Fasting", "Void Recovery"],
+      "description": "Spiritual discipline used to regain Void Points or endure deprivation. Meditation (Void Recovery) vs TN 20 restores 1 Void. Fasting helps endure without food.",
+      "masteryAbilities": [
+        "Rank 3: Restore up to 2 Void Points.",
+        "Rank 5: -5 TN for Fasting rolls.",
+        "Rank 7: Restore up to 3 Void Points."
+      ]
+    },
+    {
+      "name": "Perform",
+      "trait": "Varies",
+      "subTypes": ["Macro-Skill", "Social Skill"],
+      "emphases": ["Varies by sub-skill"],
+      "description": "Used to entertain or inspire through music, dance, or storytelling. The TN is based on the audience and situation.",
+      "masteryAbilities": []
+    },
+    {
+      "name": "Sincerity",
+      "trait": "Awareness",
+      "subTypes": ["Social Skill"],
+      "emphases": ["Honesty", "Deceit"],
+      "description": "Used to convincingly express truth or lies. Deceit is a Low Skill. Rolls may be opposed by Investigation to detect lies.",
+      "masteryAbilities": [
+        "Rank 5: +5 bonus to all Contested Sincerity Rolls."
+      ]
+    },
+    {
+      "name": "Spellcraft",
+      "trait": "Intelligence",
+      "subTypes": ["Spell Research", "Social Skill when using Importune"],
+      "emphases": ["Importune", "Spell Research"],
+      "description": "Shugenja use this for spell creation and negotiation with kami. Spell Research allows creation of new prayers with extended study.",
+      "masteryAbilities": [
+        "Rank 5: +1k0 on Spell Casting Rolls."
+      ]
+    },
+    {
+      "name": "Tea Ceremony",
+      "trait": "Void",
+      "subTypes": [],
+      "emphases": [],
+      "description": "A formal rite for spiritual bonding and regaining Void. Takes 30 minutes and restores 1 Void (2 at Rank 5). TN increases with more participants.",
+      "masteryAbilities": [
+        "Rank 5: All participants regain 2 Void Points."
+      ]
+    }
+  ],
+  "BugeiSkills": [
+    {
+      "name": "Athletics",
+      "trait": "Strength",
+      "Sub-type": "None",
+      "emphases": ["Climbing", "Running", "Swimming", "Throwing"],
+      "description": "The training that every bushi student receives includes vigorous physical conditioning...",
+      "masteryAbilities": {
+        "3": "Moderate Terrain no longer impedes movement, and movement across Difficult Terrain reduces the character’s Water Ring by 1 instead of 2.",
+        "5": "The character no longer suffers movement penalties regardless of terrain.",
+        "7": "The character may add 5 feet to the total of one Move Action per Round (this does not increase his maximum possible movement per round)."
+      }
+    },
+    {
+      "name": "Battle",
+      "trait": "Perception",
+      "Sub-type": "None",
+      "emphases": ["Mass Combat", "Skirmish"],
+      "description": "A samurai’s calling is to war, whether on the battlefield with steel in hand, in the courts confounding the enemies...",
+      "masteryAbilities": {
+        "5": "The character adds his Battle Skill Rank to his Initiative Score during Skirmishes."
+      }
+    },
+    {
+      "name": "Defense",
+      "trait": "Reflexes",
+      "Sub-type": "None",
+      "emphases": [],
+      "description": "A warrior who cannot defend himself is of little use, for he will serve his lord but once in battle before he falls...",
+      "masteryAbilities": {
+        "3": "The character may retain the result of a previous Defense / Reflexes roll rather than make a new roll if the Full Defense Stance is being maintained in subsequent rounds.",
+        "5": "The character’s Armor TN is considered 3 higher in Defense and Full Defense Stances.",
+        "7": "One Simple Action may be taken while in the Full Defense Stance (no attacks may be made)."
+      }
+    },
+    {
+      "name": "Horsemanship",
+      "trait": "Agility",
+      "Sub-type": "None",
+      "emphases": ["Gaijin Riding Horse", "Rokugani Pony", "Utaku Steed"],
+      "description": "The ability to use a mount is essential to participation in cavalry units, and to swift travel through the Empire...",
+      "masteryAbilities": {
+        "3": "The character may utilize the Full Attack Stance when on horseback.",
+        "5": "Mounting a horse is a Simple Action rather than a Complex Action, and dismounting is a Free Action rather than a Simple Action.",
+        "7": "Mounting a horse is a Free Action rather than a Simple Action."
+      }
+    },
+    {
+      "name": "Hunting",
+      "trait": "Perception",
+      "Sub-type": "None",
+      "emphases": ["Survival", "Tracking", "Trailblazing"],
+      "description": "Hunting is a sport favored by warriors, even though game is rarely if ever consumed by members of the samurai caste...",
+      "masteryAbilities": {
+        "5": "The character receives a bonus of +1k0 to the total of all Stealth Skill Rolls made in wilderness environments."
+      }
+    },
+    {
+      "name": "Iaijutsu",
+      "trait": "Reflexes",
+      "Sub-type": "None",
+      "emphases": ["Assessment", "Focus"],
+      "description": "Iaijutsu is the formal dueling system of Rokugan, an ancient and venerated tradition that even the most irreverent bushi would never slander...",
+      "masteryAbilities": {
+        "3": "Readying a katana is a Free Action rather than a Simple Action.",
+        "5": "During an Iaijutsu Duel, the character gains one Free Raise on his Iaijutsu (Focus) / Void roll during the Focus Stage.",
+        "7": "During the Assessment portion of an Iaijutsu Duel, the character gains a bonus of +2k2 to the total of all Focus Rolls if his Assessment roll exceeds his opponent’s by 10 or more (instead of the normal +1k1)."
+      }
+    },
+    {
+      "name": "Jiujutsu",
+      "trait": "Agility",
+      "Sub-type": "None",
+      "emphases": ["Grappling", "Improvised Weapons", "Martial Arts"],
+      "description": "The art of unarmed combat is something that all bushi appreciate, although not all pursue it in the dojo...",
+      "masteryAbilities": {
+        "3": "The damage of all unarmed attacks is increased by +1k0.",
+        "5": "Use of Jiujutsu confers a Free Raise toward initiating a Grapple.",
+        "7": "The damage of all unarmed attacks is increased by +0k1 (+1k1 total)."
+      }
+    },
+    {
+      "name": "Chain Weapons",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Kusarigama", "Kyoketsu-shogi", "Manrikikusari"],
+      "description": "Chain weapons are considered unconventional by most traditional bushi, but they have become accepted due to their complexity and effectiveness. Especially used by the Mantis Clan.",
+      "masteryAbilities": {
+        "rank3": "Chain weapons may be used to initiate a Grapple.",
+        "rank5": "Gain +1k0 on Contested Rolls against entangled or Grappled opponents.",
+        "rank7": "Gain one Free Raise on Disarm or Knockdown Maneuvers."
+      }
+    },
+    {
+      "name": "Crossbow",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Crossbow"],
+      "description": "Considered Bugei by Yobanjin and gaijin, but a Low Skill in Rokugan.",
+      "masteryAbilities": {
+        "rank5": "Reload a crossbow with only one Complex Action."
+      }
+    },
+    {
+      "name": "Heavy Weapons",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Dai Tsuchi", "Masakari", "Ono", "Tetsubo"],
+      "description": "Training in heavy weapons is a hallmark of Crab Clan bushi, designed to overcome formidable foes.",
+      "masteryAbilities": {
+        "rank3": "Reduce opponent’s Reduction Rating by 2.",
+        "rank5": "Free Raise on Knockdown Maneuvers.",
+        "rank7": "Damage dice explode on 9 and 10."
+      }
+    },
+    {
+      "name": "Kenjutsu",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Katana", "Ninja-to", "No-dachi", "Parangu", "Scimitar", "Wakizashi"],
+      "description": "The fundamental sword skill taught to all bushi, centered around the katana.",
+      "masteryAbilities": {
+        "rank3": "+1k0 on all sword damage rolls.",
+        "rank5": "Ready a sword as a Free Action.",
+        "rank7": "Damage dice explode on 9 and 10."
+      }
+    },
+    {
+      "name": "Knives",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Aiguchi", "Jitte", "Kama", "Sai", "Tanto"],
+      "description": "Knife training (tantojutsu) is universal among bushi due to its practicality.",
+      "masteryAbilities": {
+        "rank3": "Ignore off-hand penalties with knives.",
+        "rank5": "Free Raise on Disarm with sai or jitte.",
+        "rank7": "Free Raise on Extra Attack with any knife."
+      }
+    },
+    {
+      "name": "Kyujutsu",
+      "trait": "Reflexes",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Dai-kyu", "Hank-kyu", "Yumi"],
+      "description": "The bow is a fundamental weapon in Rokugan; archers rely on fluid motion rather than aiming.",
+      "masteryAbilities": {
+        "rank3": "Stringing a bow is a Simple Action.",
+        "rank5": "Increase max bow range by 50%.",
+        "rank7": "Bow Strength increased by 1."
+      }
+    },
+    {
+      "name": "Ninjutsu",
+      "trait": "Agility or Reflexes",
+      "Sub-type": "Weapon Skill (Low Skill)",
+      "emphases": ["Blowgun", "Shuriken", "Tsubute"],
+      "description": "The art of ninja weaponry, dishonorable but deadly in the hands of trained assassins.",
+      "masteryAbilities": {
+        "rank3": "+1k0 damage with ninjutsu weapons.",
+        "rank5": "Damage dice explode normally (they usually don’t).",
+        "rank7": "Gain +0k1 damage (total +1k1)."
+      }
+    },
+    {
+      "name": "Polearms",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Bisento", "Nagamaki", "Naginata", "Sasumata", "Sodegarami"],
+      "description": "Polearms combine reach and lethality, providing range and control on the battlefield.",
+      "masteryAbilities": {
+        "rank3": "+5 Initiative during first round of skirmish.",
+        "rank5": "+1k0 damage against mounted or larger opponents.",
+        "rank7": "Ready a polearm as a Free Action."
+      }
+    },
+    {
+      "name": "Spears",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Mai Chong", "Kumade", "Lance", "Nage-yari", "Yari"],
+      "description": "Spear techniques (yarijutsu) focus on thrusting and are highly effective against cavalry.",
+      "masteryAbilities": {
+        "rank3": "Ignore 3 points of Reduction in the first round of skirmish.",
+        "rank5": "Increase spear throw range by 5’.",
+        "rank7": "Ready a spear as a Free Action."
+      }
+    },
+    {
+      "name": "Staves",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Bo", "Jo", "Machi-kanshisha", "Sang Kauw", "Tonfa"],
+      "description": "Primarily used by monks or peasants, staves are discreet but less effective against armor.",
+      "masteryAbilities": {
+        "rank3": "Armor bonuses no longer doubled against staff attacks.",
+        "rank5": "Free Raise on Knockdown Maneuvers.",
+        "rank7": "Large staves may be readied as a Free Action; small staves gain +1k0 damage."
+      }
+    },
+    {
+      "name": "Swordsmanship Ring-Sword",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Ring-Sword"],
+      "description": "Used by the Yobanjin, ring-swords can trap enemy blades and are treated like normal swords.",
+      "masteryAbilities": {
+        "rank3": "Disarm Small/Medium weapons with one less Raise.",
+        "rank5": "Ready a sword as a Free Action.",
+        "rank7": "+1k0 damage and Disarm Large weapons with one less Raise."
+      }
+    },
+    {
+      "name": "Teppoudo",
+      "trait": "Intelligence",
+      "Sub-type": "Weapon Skill",
+      "emphases": ["Fire-Lance", "Hand-Cannon", "Bajozutsu", "Teppo"],
+      "description": "The Rokugani firearm technique, emphasizing meditative focus and careful technique.",
+      "masteryAbilities": {
+        "rank3": "+1k0 damage with Rokugani firearms.",
+        "rank5": "Loading requires one less Complex Action.",
+        "rank7": "+0k1 damage (total +1k1)."
+      }
+    },
+    {
+      "name": "War Fan",
+      "trait": "Agility",
+      "Sub-type": "Weapon Skill",
+      "emphases": [],
+      "description": "War fans (tessen) are metal tools for signaling or self-defense, used in combat by certain ronin and samurai.",
+      "masteryAbilities": {
+        "rank3": "Ignore off-hand penalties.",
+        "rank5": "Increase Armor TN by +1.",
+        "rank7": "Increase Armor TN by +3."
+      }
+    }
+  ],
+
+  "Merchant Skills": [
+    {
+      "name": "Animal Handling",
+      "trait": "Awareness",
+      "Sub-type": null,
+      "emphases": ["Dogs", "Horses", "Falcons"],
+      "description": "Animals play a vital role in a number of samurai endeavors, including recreation, transportation, or the actual waging of war. Horses and falcons are the animals most commonly trained by samurai, but a number of others exist: the Lion Clan uses trained warcats in battle, the Unicorn use war dogs, and many families use trained pigeons to carry correspondence. The difficulty to domesticate and train an animal for use varies widely depending upon the animal in question.",
+      "Mastery Abilities": {
+        "Rank 3": "Commonly domesticated animals such as dogs, horses, or falcons may be trained for use by others.",
+        "Rank 5": "Trained animals still in possession of the trainer may be commanded to attack a target of his choosing. The animal will flee for its life if badly wounded regardless of commands issued.",
+        "Rank 7": "Animals trained by the character may be issued commands non-verbally."
+      }
+    },
+    {
+      "name": "Commerce",
+      "trait": "Intelligence",
+      "Sub-type": null,
+      "emphases": ["Appraisal", "Mathematics"],
+      "description": "Occupations that involve money are distasteful to the samurai caste. They are not inherently dishonorable, of course, for it is absolutely necessary for a samurai to oversee such activities to ensure that his Clan and family are adequately provided for, but it is definitely considered something of a social stigma to deal in commerce. The actual day to day trading and conducting of business is typically left to merchant vassals, but it is not unheard of for samurai to have training in such matters. These individuals are typically referred to as 'merchant patrons.'",
+      "Mastery Abilities": {
+        "Rank 5": "The character may increase or decrease the price of an item he is buying or selling by a maximum of 20%."
+      }
+    },
+    {
+      "name": "Craft",
+      "trait": "Varies",
+      "Sub-type": "Macro-skill",
+      "emphases": [
+        "Armorsmithing", "Blacksmithing", "Bowyer", "Brewing", "Carpentry", "Cartography",
+        "Cobbling", "Cooking", "Farming", "Fishing", "Masonry", "Mining", "Poison", "Pottery",
+        "Shipbuilding", "Tailoring", "Weaponsmithing", "Weaving"
+      ],
+      "description": "If artisans are tasked with producing items that are considered abstract and beautiful by the people of the Empire, then craftsmen have the duty to create things of practical value. Blacksmiths, armorsmiths, cartwrights, carpenters, and shipwrights are all craftsmen. Fishermen and farmers are as well, although they do not produce an item but rather the food that is the lifeblood of the Empire. While crafting is not an honorable and noble a profession as being an artist, it is still highly valued and looked upon without stigma.",
+      "Mastery Abilities": {}
+    },
+    {
+      "name": "Engineering",
+      "trait": "Intelligence",
+      "Sub-type": "Considered a Craft Skill",
+      "emphases": ["Construction", "Siege"],
+      "description": "Far more complex than a simple crafting skill, engineering is a rare gift among the people of Rokugan, even the samurai who rule over it. It involves an understanding of how things are constructed and, as a result, how they can best be deconstructed. The siege engineers of the Kaiu family are the unquestioned masters of this, but there are others among other clans who have such gifts as well.",
+      "Mastery Abilities": {
+        "Rank 5": "The character gains a bonus of +5 to the total of any Engineering Skill Roll made as part of a Cooperative or Cumulative Skill Roll."
+      }
+    },
+    {
+      "name": "Sailing",
+      "trait": ["Agility", "Intelligence"],
+      "Sub-type": "Considered a Craft Skill",
+      "emphases": ["Knot-work", "Navigation"],
+      "description": "Rokugan has a vast coastline, and there is a tremendous amount of activity on the sea during the majority of the year. Trade vessels and fishing vessels make their way across the shallow waters along the coast during spring, summer, and fall, and the hardier ships belonging to the Mantis Clan make the long voyage to and from the Islands of Silk and Spice even during the depths of winter.",
+      "Mastery Abilities": {
+        "Rank 5": "The character gains a bonus of +5 to the total of any Sailing Skill Rolls made as part of a Cooperative or Cumulative Skill Roll."
+      }
+    }
+  ],
+
+  "Low Skills": [
+    {
+      "name": "Forgery",
+      "trait": "Agility",
+      "Sub-type": "Considered a Craft Skill",
+      "emphases": ["Artwork", "Documents", "Personal Seals"],
+      "description": "Documentation is very important in Rokugan, from information on an individual’s illustrious lineage to travel papers issued by magistrates, and even the official Imperial Decrees of the Emperor himself. Those with an eye for detail, a steady hand, and a distinct lack of honor can take advantage of this system by falsifying such papers, either for their own use or to sell to others. When a forgery is created, the result of your Forgery / Agility Skill Roll should be noted. This is the TN for others to detect the forgery using an Investigation / Perception Skill Roll.",
+      "Mastery Abilities": {
+        "Rank 3": "The character gains a bonus of +1k0 to his Forgery Skill Roll result for the purposes of establishing the TN of an Investigation / Perception Skill Roll to detect it.",
+        "Rank 5": "The character gains a bonus of +1k0 on any roll to detect a forgery made by someone else.",
+        "Rank 7": "The character gains a bonus of +0k1 (for a total of +1k1) to his Forgery Skill Roll result for the purposes of establishing the TN of an Investigation / Perception Skill Roll to detect it."
+      }
+    },
+    {
+      "name": "Intimidation",
+      "trait": "Willpower",
+      "Sub-type": "Social Skill",
+      "emphases": ["Bullying", "Control", "Torture"],
+      "description": "The manipulation of others through the use of threats, both stated and implied, is an oft-employed tool for those who have left their honor behind. Even bushi who are generally honorable but have a strong sense of pragmatism will occasionally abandon decorum and threaten those who refuse to cooperate. It is a shameful act, but one that many are willing to commit (and promptly forget) in order to ensure the successful completion of their duty. Intimidation is usually a Contested Roll, resisted with Etiquette (Courtesy) / Willpower. The GM may require a different Skill or Trait to resist the Intimidation attempt if it seems more appropriate to the situation. Regardless, the resisting character’s Honor Rank is added to the total of his roll.",
+      "Mastery Abilities": {
+        "Rank 5": "The character gains a bonus of +5 to the total of any Contested Roll made using Intimidation."
+      }
+    },
+    {
+      "name": "Sleight of Hand",
+      "trait": "Agility",
+      "Sub-type": null,
+      "emphases": ["Conceal", "Escape", "Pick Pocket", "Prestidigitation"],
+      "description": "The dexterous manipulation of small objects for the purpose of misdirection or concealment is not looked upon favorably by most honorable samurai. The Conceal Emphasis allows you to hide small objects (something that can fit in your hand) on your person, requiring a Contested Roll using Sleight of Hand / Agility against Investigation / Perception to detect it. The Escape Emphasis allows you to slip free of bonds. Pick Pockets is fairly self explanatory, and Prestidigitation allows you to use the Skill to entertain or distract people by performing tricks.",
+      "Mastery Abilities": {
+        "Rank 5": "The character may use the Conceal Emphasis to conceal small weapons."
+      }
+    },
+    {
+      "name": "Stealth",
+      "trait": "Agility",
+      "Sub-type": null,
+      "emphases": ["Ambush", "Shadowing", "Sneaking", "Spell Casting"],
+      "description": "Although generally a dishonorable practice, stealth has its uses in such situations as hunting or while scouting during a military engagement. While concealed via Stealth, you may take Move Actions. When taking a Move Action while using Stealth, you may only make Simple Move Actions, and these only allow you to move a number of feet equal to your Water Ring (although Mastery Abilities can increase this significantly). The Ambush Emphasis allows you to make a Stealth (Ambush) / Agility roll, contested by an opponent’s Investigation (Notice) / Perception, to gain an advantage during the first round of combat. The Spell Casting Emphasis allows you to hide the source of a spell when casting it.",
+      "Mastery Abilities": {
+        "Rank 3": "A character’s Simple Move Actions while using Stealth allow him to move a distance equal to his Water x 5.",
+        "Rank 5": "A character’s Simple Move Actions while using Stealth allow him to move a distance equal to his Water x 10.",
+        "Rank 7": "A character using Stealth may make Free Move Actions as normal."
+      }
+    },
+    {
+      "name": "Temptation",
+      "trait": "Awareness",
+      "Sub-type": "Social Skill",
+      "emphases": ["Bribery", "Seduction"],
+      "description": "The art of offering another something that they desire in order to gain in turn something one desires is as old as civilization itself. Temptation is best used against opponents who possess certain kinds of Disadvantages, such as Lechery, Fascination, Greed, or perhaps a Dark Secret. The GM will usually require a Contested Roll using Temptation / Awareness (with the appropriate Emphasis) against the target’s Etiquette (Courtesy) / Willpower.",
+      "Mastery Abilities": {
+        "Rank 5": "The character gains a bonus of +5 to the total of any Contested Roll made using Temptation."
+      }
+    }
+  ]
+}

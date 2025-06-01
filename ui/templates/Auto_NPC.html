@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', path='/css/Auto_NPC.css') }}" rel="stylesheet">
+
+    <script language="JavaScript" src="{{ url_for('static', path='/js/Auto_NPC.js') }}"></script>
+	<script language="JavaScript"  src="{{ url_for('static', path='/js/select_map.js') }}"></script>
+    <script language="JavaScript"  src="{{ url_for('static', path='/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <meta charset="UTF-8">
+    <title>Auto NPC</title>
+</head>
+<body>
+<div class="topbar">
+        <div id="index_name_box">
+            <h2>Auto npc
+
+            </h2>
+        </div>
+        <button class="deconnection-button" id="deconnection-button">
+            <img src="{{ url_for('static', path='/images/deco.png') }}" width="100%" height="100%">
+        </button>
+    </div>
+
+<div class="grid-container">
+        <div class="sidebar">
+            <button class="sidebar-button"><</button>
+            <div class="sidebar-content">
+                <div class="margine"></div>
+
+            </div>
+        </div>
+        <div class="main-content">
+            <form action="/form_result" class="npc_form" id="stat_form">
+                <div id="stat_element">
+                    <div class="circle" id="earth"></div>
+                    <div class="trait_box" id="earth_t"><b>Earth</b></div>
+                    <input type="number" name="earth_cicle" value="2" class="little_circle" id="earth_cicle">
+                    <input type="number"  name="stamina" min="1" max="10" value="2" oninput="checkValue(this);" id="earth_traitp" class="little_circle">
+                    <div class="trait_box" id="earth_traitp_t"> Stamina</div>
+                    <input type="number"  name="willpower" min="1" max="10" value="2" oninput="checkValue(this);" id="earth_traitm" class="little_circle">
+                    <div class="trait_box" id="earth_traitm_t"> Willpower</div>
+                    <div class="circle" id="air"></div>
+                    <div class="trait_box" id="air_t"> <b>Air</b></div>
+                    <input type="number" name="air_cicle" value="2" class="little_circle" id="air_cicle">
+                    <input type="number"  name="reflexes" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="air_traitp">
+                    <div class="trait_box" id="air_traitp_t"> Reflexes</div>
+                    <input type="number"  name="awareness" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="air_traitm">
+                    <div class="trait_box" id="air_traitm_t"> Awareness</div>
+                    <div class="circle" id="fire"></div>
+                    <div class="trait_box" id="fire_t"> <b>Fire</b></div>
+                    <input type="number" name="fire_cicle" value="2" class="little_circle" id="fire_cicle">
+                    <input type="number"  name="agility" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="fire_traitp">
+                    <div class="trait_box" id="fire_traitp_t"> Agility</div>
+                    <input type="number"  name="intelligence" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="fire_traitm">
+                    <div class="trait_box" id="fire_traitm_t"> Intelligence</div>
+                    <div class="circle" id="water"></div>
+                    <div class="trait_box" id="water_t"> <b>Water</b></div>
+                    <input type="number" name="water_cicle" value="2" class="little_circle" id="water_cicle">
+                    <input type="number"  name="strenght" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="water_traitp">
+                    <div class="trait_box" id="water_traitp_t"> Strenght</div>
+                    <input type="number"  name="perception" min="1" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="water_traitm">
+                    <div class="trait_box" id="water_traitm_t"> Perception</div>
+                    <div class="circle" id="void"></div>
+                    <div class="trait_box" id="void_t"> <b>Void</b></div>
+                    <input type="number"  name="void" min="2" max="10" value="2" oninput="checkValue(this);" class="little_circle" id="void_cicle">
+                    <div class="hidden" id="npc_name"> <p> <b> NPC Name:</b> </p> <p id="name_responce">name : </p>  </div>
+                </div>
+                <div class="block_info" >
+                    <div class = character_info_1>
+                        <div class="ind_aa textcenter">
+                            <label for="clan_selection" >&nbsp Clan: &nbsp</label>
+                            <select name="clan" class="select_size" id="clan_selection" >
+                                <option value="crab">The great Crab clan</option>
+                                <option value="crane">The great Crane clan</option>
+                                <option value="dragon">The great Dragon clan</option>
+                                <option value="lion">The great Lion clan</option>
+                                <option value="mantis">The great Mantis clan</option>
+                                <option value="phoenix">The great Phoenix clan</option>
+                                <option value="scorpion">The great Scorpion clan</option>
+                                <option value="unicorn">The great Unicorn clan</option>
+                            </select>
+                        </div>
+                        <div class="ind_ab textcenter">
+                            <p class="bonus_trait"><b>Bonus trait</b></p>
+                        </div>
+                        <div class="ind_ac textcenter">
+                            <label for="glory">Glory:</label>
+                            <input id="glory" type="number" min="0" max="10" oninput="checkValue(this);">
+                        </div>
+                        <div class="ind_ad textcenter">
+                            <label for="status">Status:</label>
+                            <input id="status" type="number" min="0" max="10" oninput="checkValue(this);">
+                        </div>
+                        <div class="ind_ba textcenter">
+                            <label for="family_selection">Family:</label>
+                            <select name="family" class="select_size" id="family_selection">
+                                <option value="">-- select a clan --</option>
+                            </select>
+                        </div>
+                        <div class="ind_bb textcenter">
+                            <p class="bonus_trait" id="family_bonus_trait">none</p>
+                        </div>
+                        <div class="ind_bc textcenter">
+                            <label for="honor">Honor:</label>
+                            <input id="honor" type="number" min="0" max="10" oninput="checkValue(this);">
+                        </div>
+                        <div class="ind_bd textcenter">
+                            <p > Insight:</p>
+                            <p id="insight" > 107/149</p>
+                        </div>
+                        <div class="ind_ca textcenter">
+                            <label for="school_selection">School:</label>
+                            <select name="school" class="select_size" id="school_selection">
+                                <option value="">-- select a clan --</option>
+                            </select>
+                        </div>
+                        <div class="ind_cb textcenter">
+                            <p class="bonus_trait" id="school_bonus_trait">none</p>
+                        </div>
+                        <div class="ind_cc textcenter">
+                            <p > Insight rank:</p>
+                            <p id="insight_rank"> 1</p>
+                        </div>
+                        <div class="ind_cd textcenter">
+                            <p >Max rank:</p>
+                            <p id="max_insight_rank"> 0</p>
+                        </div>
+                        <div class="ind_da" id="other_schools_box textcenter">
+                            <table id="other_schools_table" class="info_table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" style="width: calc(16*100%/28);">School name</th>
+                                        <th scope="col" style="width: calc(8*100%/28);">Rank</th>
+                                        <th scope="col" style="width: calc(4*100%/28);"> <input  type="button" value="Confirm school" onclick="newschoolbouton(this);"></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="character_info_2">
+                        <div>
+                            <select  id="searchable_advantage">
+                                <option value='' id='no_adv' selected='selected'> -- Choose an advantage --</option>
+                                <optgroup label='Physical' id='adv_cat_physical'>
+                                    <option value='Bland' id='adv_bland'> Bland</option>
+                                    <option value='Crab Hands' id='adv_crab_hands'> Crab Hands</option>
+                                    <option value='Dangerous Beauty' id='adv_dangerous_beauty'> Dangerous Beauty</option>
+                                    <option value='Hands of Stone' id='adv_hands_of_stone'> Hands of Stone</option>
+                                    <option value='Iron Heart Native' id='adv_iron_heart_native'> Iron Heart Native</option>
+                                    <option value='Large' id='adv_large'> Large</option>
+                                    <option value='Prodigy' id='adv_prodigy'> Prodigy</option>
+                                    <option value='Quick' id='adv_quick'> Quick</option>
+                                    <option value='Quick Healer' id='adv_quick_healer'> Quick Healer</option>
+                                    <option value='Ruined City Shadow' id='adv_ruined_city_shadow'> Ruined City Shadow</option>
+                                    <option value='Silent' id='adv_silent'> Silent</option>
+                                    <option value='Strength of the Earth' id='adv_strength_of_the_earth'> Strength of the Earth</option>
+                                    <option value='Voice' id='adv_voice'> Voice</option>
+                                </optgroup>
+                                <optgroup label='Material' id='adv_cat_material'>
+                                    <option value='Gaijin Gear' id='adv_gaijin_gear'> Gaijin Gear</option>
+                                    <option value='Gentry' id='adv_gentry'> Gentry</option>
+                                    <option value='Inheritance' id='adv_inheritance'> Inheritance</option>
+                                    <option value='Inheritance: Asahina Blade' id='adv_inheritance:_asahina_blade'> Inheritance: Asahina Blade</option>
+                                    <option value='Inheritance: Kobune' id='adv_inheritance:_kobune'> Inheritance: Kobune</option>
+                                    <option value='Inheritance: Trained Falcon' id='adv_inheritance:_trained_falcon'> Inheritance: Trained Falcon</option>
+                                    <option value='Inheritance: Water Hammer Armor' id='adv_inheritance:_water_hammer_armor'> Inheritance: Water Hammer Armor</option>
+                                    <option value='Sacred Weapon' id='adv_sacred_weapon'> Sacred Weapon</option>
+                                    <option value='Sacred Weapon, alternate Black Steel Blade' id='adv_sacred_weapon,_alternate_black_steel_blade'> Sacred Weapon, alternate Black Steel Blade</option>
+                                    <option value='Sacred Weapon, Owl Blade' id='adv_sacred_weapon,_owl_blade'> Sacred Weapon, Owl Blade</option>
+                                    <option value='Servant' id='adv_servant'> Servant</option>
+                                    <option value='Wealthy' id='adv_wealthy'> Wealthy</option>
+                                </optgroup>
+                                <optgroup label='Social' id='adv_cat_social'>
+                                    <option value='Allies' id='adv_allies'> Allies</option>
+                                    <option value='Blackmail' id='adv_blackmail'> Blackmail</option>
+                                    <option value='Blissful Betrothal' id='adv_blissful_betrothal'> Blissful Betrothal</option>
+                                    <option value='Broken Wave Citizen' id='adv_broken_wave_citizen'> Broken Wave Citizen</option>
+                                    <option value='Dark Edge Native' id='adv_dark_edge_native'> Dark Edge Native</option>
+                                    <option value='Darling of the Court' id='adv_darling_of_the_court'> Darling of the Court</option>
+                                    <option value='Different School' id='adv_different_school'> Different School</option>
+                                    <option value='Fame' id='adv_fame'> Fame</option>
+                                    <option value='Heart of Vengeance' id='adv_heart_of_vengeance'> Heart of Vengeance</option>
+                                    <option value='Hero of the People' id='adv_hero_of_the_people'> Hero of the People</option>
+                                    <option value='Imperial City Citizen' id='adv_imperial_city_citizen'> Imperial City Citizen</option>
+                                    <option value='Imperial City Veteran' id='adv_imperial_city_veteran'> Imperial City Veteran</option>
+                                    <option value='Imperial Scribe' id='adv_imperial_scribe'> Imperial Scribe</option>
+                                    <option value='Imperial Spouse' id='adv_imperial_spouse'> Imperial Spouse</option>
+                                    <option value='Leadership' id='adv_leadership'> Leadership</option>
+                                    <option value='Multiple Schools' id='adv_multiple_schools'> Multiple Schools</option>
+                                    <option value='Nikesake Citizen' id='adv_nikesake_citizen'> Nikesake Citizen</option>
+                                    <option value='Perceived Honor' id='adv_perceived_honor'> Perceived Honor</option>
+                                    <option value='Sacrosanct' id='adv_sacrosanct'> Sacrosanct</option>
+                                    <option value='Sensation' id='adv_sensation'> Sensation</option>
+                                    <option value='Social Position' id='adv_social_position'> Social Position</option>
+                                    <option value='Spy Network' id='adv_spy_network'> Spy Network</option>
+                                    <option value='Stolen Identity' id='adv_stolen_identity'> Stolen Identity</option>
+                                    <option value='Water Hammer Citizen' id='adv_water_hammer_citizen'> Water Hammer Citizen</option>
+                                    <option value='Well-Connected' id='adv_well-connected'> Well-Connected</option>
+                                    <option value='Zakyo Toshi Citizen' id='adv_zakyo_toshi_citizen'> Zakyo Toshi Citizen</option>
+                                </optgroup>
+                                <optgroup label='Spiritual' id='adv_cat_spiritual'>
+                                    <option value='Great Potential' id='adv_great_potential'> Great Potential</option>
+                                    <option value='Battle Healing' id='adv_battle_healing'> Battle Healing</option>
+                                    <option value='Blood of Osano-Wo' id='adv_blood_of_osano-wo'> Blood of Osano-Wo</option>
+                                    <option value='Child of Chikushudo' id='adv_child_of_chikushudo'> Child of Chikushudo</option>
+                                    <option value='Chosen by the Oracles' id='adv_chosen_by_the_oracles'> Chosen by the Oracles</option>
+                                    <option value='Elemental Blessing' id='adv_elemental_blessing'> Elemental Blessing</option>
+                                    <option value='Enlightened' id='adv_enlightened'> Enlightened</option>
+                                    <option value='Friendly Kami' id='adv_friendly_kami'> Friendly Kami</option>
+                                    <option value='Friend of the Brotherhood' id='adv_friend_of_the_brotherhood'> Friend of the Brotherhood</option>
+                                    <option value='Friend of the Elements' id='adv_friend_of_the_elements'> Friend of the Elements</option>
+                                    <option value='Great Destiny' id='adv_great_destiny'> Great Destiny</option>
+                                    <option value='Inari’s Blessing' id='adv_inari’s_blessing'> Inari’s Blessing</option>
+                                    <option value='Inner Gift' id='adv_inner_gift'> Inner Gift</option>
+                                    <option value='Ishiken-Do' id='adv_ishiken-do'> Ishiken-Do</option>
+                                    <option value='Kharmic Tie' id='adv_kharmic_tie'> Kharmic Tie</option>
+                                    <option value='Luck' id='adv_luck'> Luck</option>
+                                    <option value='Magic Resistance' id='adv_magic_resistance'> Magic Resistance</option>
+                                    <option value='Medium' id='adv_medium'> Medium</option>
+                                    <option value='Naga Ancestry' id='adv_naga_ancestry'> Naga Ancestry</option>
+                                    <option value='Reincarnated' id='adv_reincarnated'> Reincarnated</option>
+                                    <option value='Seven Fortunes Blessing' id='adv_seven_fortunes_blessing'> Seven Fortunes Blessing</option>
+                                    <option value='Touch of the Spirit Realms' id='adv_touch_of_the_spirit_realms'> Touch of the Spirit Realms</option>
+                                    <option value='Void Versatility' id='adv_void_versatility'> Void Versatility</option>
+                                </optgroup>
+                                <optgroup label='Mental' id='adv_cat_mental'>
+                                    <option value='Absolute Direction' id='adv_absolute_direction'> Absolute Direction</option>
+                                    <option value='Balance' id='adv_balance'> Balance</option>
+                                    <option value='Clear Thinker' id='adv_clear_thinker'> Clear Thinker</option>
+                                    <option value='Crafty' id='adv_crafty'> Crafty</option>
+                                    <option value='Daredevil' id='adv_daredevil'> Daredevil</option>
+                                    <option value='Dark Paragon' id='adv_dark_paragon'> Dark Paragon</option>
+                                    <option value='Forbidden Knowledge' id='adv_forbidden_knowledge'> Forbidden Knowledge</option>
+                                    <option value='Heartless' id='adv_heartless'> Heartless</option>
+                                    <option value='Higher Purpose' id='adv_higher_purpose'> Higher Purpose</option>
+                                    <option value='Irreproachable' id='adv_irreproachable'> Irreproachable</option>
+                                    <option value='Languages' id='adv_languages'> Languages</option>
+                                    <option value='Laughing Plains Native' id='adv_laughing_plains_native'> Laughing Plains Native</option>
+                                    <option value='Naishou Citizen' id='adv_naishou_citizen'> Naishou Citizen</option>
+                                    <option value='Paragon' id='adv_paragon'> Paragon</option>
+                                    <option value='Precise Memory' id='adv_precise_memory'> Precise Memory</option>
+                                    <option value='Read Lips' id='adv_read_lips'> Read Lips</option>
+                                    <option value='Sacred Forest Native' id='adv_sacred_forest_native'> Sacred Forest Native</option>
+                                    <option value='Sage' id='adv_sage'> Sage</option>
+                                    <option value='Sage of the Sword and Fan' id='adv_sage_of_the_sword_and_fan'> Sage of the Sword and Fan</option>
+                                    <option value='Shadowed Heart' id='adv_shadowed_heart'> Shadowed Heart</option>
+                                    <option value='Soul of Artistry' id='adv_soul_of_artistry'> Soul of Artistry</option>
+                                    <option value='Strategist' id='adv_strategist'> Strategist</option>
+                                    <option value='Student of Shourido' id='adv_student_of_shourido'> Student of Shourido</option>
+                                    <option value='Tactician' id='adv_tactician'> Tactician</option>
+                                    <option value='Virtuous' id='adv_virtuous'> Virtuous</option>
+                                    <option value='Wary' id='adv_wary'> Wary</option>
+                                    <option value='Watanu-Trained' id='adv_watanu-trained'> Watanu-Trained</option>
+                                    <option value='Way of the Land' id='adv_way_of_the_land'> Way of the Land</option>
+                                </optgroup>
+
+                            </select>
+                        </div>
+
+                        <div class="ind1_2 middle">
+                            <select id="advantages_categories">
+                                <option value='all' id='cat_all_adv' selected="selected"> All </option>
+                                <option value='physical' id='cat_physical'> Physical </option>
+                                <option value='material' id='cat_material'> Material </option>
+                                <option value='social' id='cat_social'> Social </option>
+                                <option value='spiritual' id='cat_spiritual'> Spiritual </option>
+                                <option value='mental' id='cat_mental'> Mental </option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="searchable_disadvantage">
+                                <option value='' id='no_disadv' selected='selected'> -- Choose an disadvantage --</option>
+                                <optgroup label='Physical' id='dis_cat_physical'>
+                                    <option value='Bad Eyesight' id='dis_bad_eyesight'> Bad Eyesight</option>
+                                    <option value='Bad Health' id='dis_bad_health'> Bad Health</option>
+                                    <option value='Blind' id='dis_blind'> Blind</option>
+                                    <option value='Disturbing Countenance' id='dis_disturbing_countenance'> Disturbing Countenance</option>
+                                    <option value='Epilepsy' id='dis_epilepsy'> Epilepsy</option>
+                                    <option value='Lame' id='dis_lame'> Lame</option>
+                                    <option value='Low Pain Threshold' id='dis_low_pain_threshold'> Low Pain Threshold</option>
+                                    <option value='Missing Limb' id='dis_missing_limb'> Missing Limb</option>
+                                    <option value='Permanent Wound' id='dis_permanent_wound'> Permanent Wound</option>
+                                    <option value='Small' id='dis_small'> Small</option>
+                                    <option value='Weakness' id='dis_weakness'> Weakness</option>
+                                </optgroup>
+                                <optgroup label='Material' id='dis_cat_material'>
+                                    <option value='Ruined City Survivor' id='dis_ruined_city_survivor'> Ruined City Survivor</option>
+                                </optgroup>
+                                <optgroup label='Social' id='dis_cat_social'>
+                                    <option value='Antisocial' id='dis_antisocial'> Antisocial</option>
+                                    <option value='Bitter Betrothal' id='dis_bitter_betrothal'> Bitter Betrothal</option>
+                                    <option value='Blackmailed' id='dis_blackmailed'> Blackmailed</option>
+                                    <option value='Black Sheep' id='dis_black_sheep'> Black Sheep</option>
+                                    <option value='Bounty' id='dis_bounty'> Bounty</option>
+                                    <option value='Broken Wave Stigma' id='dis_broken_wave_stigma'> Broken Wave Stigma</option>
+                                    <option value='Cast Out' id='dis_cast_out'> Cast Out</option>
+                                    <option value='Dark Edge Reputation' id='dis_dark_edge_reputation'> Dark Edge Reputation</option>
+                                    <option value='Dark Secret' id='dis_dark_secret'> Dark Secret</option>
+                                    <option value='Debt' id='dis_debt'> Debt</option>
+                                    <option value='Dependent' id='dis_dependent'> Dependent</option>
+                                    <option value='Dishonored' id='dis_dishonored'> Dishonored</option>
+                                    <option value='Forced Retirement' id='dis_forced_retirement'> Forced Retirement</option>
+                                    <option value='Gaijin Name' id='dis_gaijin_name'> Gaijin Name</option>
+                                    <option value='Hostage' id='dis_hostage'> Hostage</option>
+                                    <option value='Imperial City Stigma' id='dis_imperial_city_stigma'> Imperial City Stigma</option>
+                                    <option value='Infamous' id='dis_infamous'> Infamous</option>
+                                    <option value='Lechery' id='dis_lechery'> Lechery</option>
+                                    <option value='Member of the Chrysanthemum Court' id='dis_member_of_the_chrysanthemum_court'> Member of the Chrysanthemum Court</option>
+                                    <option value='Nikesake Stigma' id='dis_nikesake_stigma'> Nikesake Stigma</option>
+                                    <option value='Obligation' id='dis_obligation'> Obligation</option>
+                                    <option value='Rumormonger' id='dis_rumormonger'> Rumormonger</option>
+                                    <option value='Social Disadvantage' id='dis_social_disadvantage'> Social Disadvantage</option>
+                                    <option value='Sworn Enemy' id='dis_sworn_enemy'> Sworn Enemy</option>
+                                    <option value='Water Hammer Stigma' id='dis_water_hammer_stigma'> Water Hammer Stigma</option>
+                                    <option value='Zakyo Toshi Stigma' id='dis_zakyo_toshi_stigma'> Zakyo Toshi Stigma</option>
+                                </optgroup>
+                                <optgroup label='Spiritual' id='dis_cat_spiritual'>
+                                    <option value='Bad Fortune' id='dis_bad_fortune'> Bad Fortune</option>
+                                    <option value='Cursed by the Realm' id='dis_cursed_by_the_realm'> Cursed by the Realm</option>
+                                    <option value='Dark Fate' id='dis_dark_fate'> Dark Fate</option>
+                                    <option value='Elemental Imbalance' id='dis_elemental_imbalance'> Elemental Imbalance</option>
+                                    <option value='Enlightened Madness' id='dis_enlightened_madness'> Enlightened Madness</option>
+                                    <option value='Haunted' id='dis_haunted'> Haunted</option>
+                                    <option value='Lord Moon’s Curse' id='dis_lord_moon’s_curse'> Lord Moon’s Curse</option>
+                                    <option value='Momoku' id='dis_momoku'> Momoku</option>
+                                    <option value='Seven Fortunes Curse' id='dis_seven_fortunes_curse'> Seven Fortunes Curse</option>
+                                    <option value='Shadowlands Taint' id='dis_shadowlands_taint'> Shadowlands Taint</option>
+                                    <option value='Touch of the Void' id='dis_touch_of_the_void'> Touch of the Void</option>
+                                    <option value='Uncentered' id='dis_uncentered'> Uncentered</option>
+                                    <option value='Unlucky' id='dis_unlucky'> Unlucky</option>
+                                    <option value='Wrath of the Kami' id='dis_wrath_of_the_kami'> Wrath of the Kami</option>
+                                </optgroup>
+                                <optgroup label='Mental' id='dis_cat_mental'>
+                                    <option value='Anachronism' id='dis_anachronism'> Anachronism</option>
+                                    <option value='Ascetic' id='dis_ascetic'> Ascetic</option>
+                                    <option value='Brash' id='dis_brash'> Brash</option>
+                                    <option value='Can’t Lie' id='dis_can’t_lie'> Can’t Lie</option>
+                                    <option value='Compulsion' id='dis_compulsion'> Compulsion</option>
+                                    <option value='Consumed' id='dis_consumed'> Consumed</option>
+                                    <option value='Contrary' id='dis_contrary'> Contrary</option>
+                                    <option value='Disbeliever' id='dis_disbeliever'> Disbeliever</option>
+                                    <option value='Doubt' id='dis_doubt'> Doubt</option>
+                                    <option value='Driven' id='dis_driven'> Driven</option>
+                                    <option value='Fascination' id='dis_fascination'> Fascination</option>
+                                    <option value='Failure of Bushido' id='dis_failure_of_bushido'> Failure of Bushido</option>
+                                    <option value='Frail Mind' id='dis_frail_mind'> Frail Mind</option>
+                                    <option value='Greedy' id='dis_greedy'> Greedy</option>
+                                    <option value='Gullible' id='dis_gullible'> Gullible</option>
+                                    <option value='Idealistic' id='dis_idealistic'> Idealistic</option>
+                                    <option value='Insensitive' id='dis_insensitive'> Insensitive</option>
+                                    <option value='Jealousy' id='dis_jealousy'> Jealousy</option>
+                                    <option value='Lost Love' id='dis_lost_love'> Lost Love</option>
+                                    <option value='Obtuse' id='dis_obtuse'> Obtuse</option>
+                                    <option value='Overconfident' id='dis_overconfident'> Overconfident</option>
+                                    <option value='Phobia' id='dis_phobia'> Phobia</option>
+                                    <option value='Sleeper Agent' id='dis_sleeper_agent'> Sleeper Agent</option>
+                                    <option value='Soft-Hearted' id='dis_soft-hearted'> Soft-Hearted</option>
+                                    <option value='True Love' id='dis_true_love'> True Love</option>
+                                    <option value='Wanderer' id='dis_wanderer'> Wanderer</option>
+                                </optgroup>
+
+                            </select>
+
+                        </div>
+
+                        <div class="ind2_1">
+                            <table class="info_table" id="advantage_table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" style="width: calc(25*100%/28);">Advantage</th>
+                                        <th scope="col" style="width: calc(3*100%/28);"></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="middle">
+                            <input type="button" value="+" onclick="newsadv(this);" style="height:22px;margin-top:1px;">
+                        </div>
+                        <div class="ind2_2">
+                            <table class="info_table" id="disadvantage_table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col" style="width: calc(25*100%/28);">Disadvantage</th>
+                                        <th scope="col" style="width: calc(3*100%/28);"></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block_info">
+                    <div>
+                        <label for="info_sup">More background information:</label>
+                        <textarea id="info_sup" style="width:98.5%; aspect-ratio: 28/4;resize:none;"></textarea>
+                    </div >
+                    <div >
+                        <div class="flexbox" id="skill_buttons">
+                            <div>
+                                <select class="select_size" id="searchable_skill" >
+                                    <option value='' id='skill_defaults' selected="selected">-- Choose a skill --</option>
+                                    <optgroup label='High Skills' id='skill_cat_high_skills'>
+                                    <option value='acting' id='skill_acting'> Acting</option>
+                                    <option value='artisan' id='skill_artisan'> Artisan</option>
+                                    <option value='calligraphy' id='skill_calligraphy'> Calligraphy</option>
+                                    <option value='courtier' id='skill_courtier'> Courtier</option>
+                                    <option value='divination' id='skill_divination'> Divination</option>
+                                    <option value='etiquette' id='skill_etiquette'> Etiquette</option>
+                                    <option value='games' id='skill_games'> Games</option>
+                                    <option value='investigation' id='skill_investigation'> Investigation</option>
+                                    <option value='lore' id='skill_lore'> Lore</option>
+                                    <option value='medicine' id='skill_medicine'> Medicine</option>
+                                    <option value='meditation' id='skill_meditation'> Meditation</option>
+                                    <option value='perform' id='skill_perform'> Perform</option>
+                                    <option value='sincerity' id='skill_sincerity'> Sincerity</option>
+                                    <option value='spellcraft' id='skill_spellcraft'> Spellcraft</option>
+                                    <option value='tea_ceremony' id='skill_tea_ceremony'> Tea Ceremony</option>
+                                    <optgroup label='Bugei_Skills' id='skill_cat_bugei_skills'>
+                                    <option value='athletics' id='skill_athletics'> Athletics</option>
+                                    <option value='battle' id='skill_battle'> Battle</option>
+                                    <option value='defense' id='skill_defense'> Defense</option>
+                                    <option value='horsemanship' id='skill_horsemanship'> Horsemanship</option>
+                                    <option value='hunting' id='skill_hunting'> Hunting</option>
+                                    <option value='iaijutsu' id='skill_iaijutsu'> Iaijutsu</option>
+                                    <option value='jiujutsu' id='skill_jiujutsu'> Jiujutsu</option>
+                                    <option value='chain_weapons' id='skill_chain_weapons'> Chain Weapons</option>
+                                    <option value='crossbow' id='skill_crossbow'> Crossbow</option>
+                                    <option value='heavy_weapons' id='skill_heavy_weapons'> Heavy Weapons</option>
+                                    <option value='kenjutsu' id='skill_kenjutsu'> Kenjutsu</option>
+                                    <option value='knives' id='skill_knives'> Knives</option>
+                                    <option value='kyujutsu' id='skill_kyujutsu'> Kyujutsu</option>
+                                    <option value='ninjutsu' id='skill_ninjutsu'> Ninjutsu</option>
+                                    <option value='polearms' id='skill_polearms'> Polearms</option>
+                                    <option value='spears' id='skill_spears'> Spears</option>
+                                    <option value='staves' id='skill_staves'> Staves</option>
+                                    <option value='swordsmanship_ring-sword' id='skill_swordsmanship_ring-sword'> Swordsmanship Ring-Sword</option>
+                                    <option value='teppoudo' id='skill_teppoudo'> Teppoudo</option>
+                                    <option value='war_fan' id='skill_war_fan'> War Fan</option>
+                                    <optgroup label='Merchant Skills' id='skill_cat_merchant_skills'>
+                                    <option value='animal_handling' id='skill_animal_handling'> Animal Handling</option>
+                                    <option value='commerce' id='skill_commerce'> Commerce</option>
+                                    <option value='craft' id='skill_craft'> Craft</option>
+                                    <option value='engineering' id='skill_engineering'> Engineering</option>
+                                    <option value='sailing' id='skill_sailing'> Sailing</option>
+                                    <optgroup label='Low Skills' id='skill_cat_low_skills'>
+                                    <option value='forgery' id='skill_forgery'> Forgery</option>
+                                    <option value='intimidation' id='skill_intimidation'> Intimidation</option>
+                                    <option value='sleight_of_hand' id='skill_sleight_of_hand'> Sleight of Hand</option>
+                                    <option value='stealth' id='skill_stealth'> Stealth</option>
+                                    <option value='temptation' id='skill_temptation'> Temptation</option>"
+                                </select>
+                            </div>
+
+                            <div style="height: 22px;margin-left: 0.5vw;">
+                                <select id="Skills_categories">
+                                    <option value='all_skills' id='all_skills'> All Skills</option>
+                                    <option value='high_skills' id='high_skills'> High Skills</option>
+                                    <option value='bugei_skills' id='bugei_skills'> Bugei_Skills</option>
+                                    <option value='merchant_skills' id='merchant_skills'> Merchant Skills</option>
+                                    <option value='low_skills' id='low_skills'> Low Skills</option>"
+                                </select>
+                            </div>
+                            <div style="height: 22px;margin:2px;margin-left: auto;">
+                                <input type="button" value="Add skill" onclick="newskillbouton(this);">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                         <table id="skill_table" class="info_table">
+                             <tbody>
+                                <tr>
+                                    <th scope="col" style="width: calc(10vw*100%/28);">Skill</th>
+                                    <th scope="col" style="width: calc(5*100%/28);"> rank</th>
+                                    <th scope="col" style="width: calc(3*100%/28);"> </th>
+                                </tr>
+                             </tbody>
+                        </table>
+                    </div>
+                    <div id="bottom_box" >
+                        <input type="button" id="save_npc" value="save npc" disabled="" onclick="send_npc(this);" style="margin-right:1%;">
+                        <select id="load_npc" style="margin-right:1%;">
+                            {% for i in range(8) %}
+                                <optgroup label='{{order[i]}}' id='save_clan_{{order[i]}}' {% if select_npc[i][0][0] == None %} disabled="" {% endif%}>
+                                {% for index, name in select_npc[i] %}
+                                    {% if index != None %}
+                                    <option value="{{index}}"> {{name}}</option>
+                                    {% endif%}
+                                {% endfor %}
+                                </optgroup>
+                            {% endfor %}
+
+                        </select>
+                        <select id="filtre_load_npc" style="margin-right:1%;">
+                                <option value="all"> all</option>
+                            {% for i in range(8) %}
+                                <option value="{{order[i]}}" id='filtre_load_{{order[i]}}' {% if select_npc[i][0][0] == None %} class="hidden" {% endif%}> {{order[i]}}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="button" id="load_npc_button" value="load npc" style="margin-right:1%;" onclick="fetch_npc();">
+                        <input type="button" id="delete_npc" value="delete save npc" onclick="del_npc();">
+                        <input type="submit" value="Submit" id="submit_bouton">
+                    </div>
+                </div>
+                <div class="block_response hidden">
+                    <p> <b>NPC Background: </b> </p>
+                    <p id="npc_background"> </p>
+                </div>
+                <div class="block_response hidden">
+                    <p> <b>NPC Personality: </b> </p>
+                    <p id="npc_personality"> </p>
+                </div>
+                <div class="block_response hidden">
+                    <p> <b>NPC Appearance: </b> </p>
+                    <p id="npc_appearance"> </p>
+                </div>
+            </form>
+                <div class="footer hidden">
+                    <span class="close_footer" onclick="close_footer(this);">&times;</span>
+                    <p id="footer_message"></p>
+                </div>
+                <div class="waiting_box hidden">
+                    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
+                        <radialGradient id='a11' cx='.66' fx='.66' cy='.3125' fy='.3125' gradientTransform='scale(1.5)'>
+                            <stop offset='0' stop-color='#037C00'></stop>
+                            <stop offset='.3' stop-color='#037C00' stop-opacity='.9'></stop>
+                            <stop offset='.6' stop-color='#036500' stop-opacity='.6'></stop>
+                            <stop offset='.8' stop-color='#036000' stop-opacity='.3'></stop>
+                            <stop offset='1' stop-color='#035200' stop-opacity='0'></stop>
+                        </radialGradient>
+                        <circle transform-origin='center' fill='none' stroke='url(#a11)' stroke-width='15' stroke-linecap='round'
+                                stroke-dasharray='200 1000' stroke-dashoffset='0' cx='100' cy='100' r='70'>
+                            <animateTransform type='rotate' attributeName='transform' calcMode='spline' dur='2' values='360;0'
+                                              keyTimes='0;1' keySplines='0 0 1 1' repeatCount='indefinite'></animateTransform>
+                        </circle>
+                        <circle transform-origin='center' fill='none' opacity='.2' stroke='#679403' stroke-width='15' stroke-linecap='round'
+                                cx='100' cy='100' r='70'></circle>
+                    </svg>
+                </div>
+
+        </div>
+</div>
+</body>
+</html>
