@@ -1,16 +1,15 @@
 from openai import OpenAI
 from data_model import Form_data, NPCBackground
 import json
+import os
 
 
-with open('json_data/api_key.json', 'r') as f:
-    api_key = json.load(f)
 
 
 
 class Connect_to_openAI_api:
     def __init__(self, data: Form_data, model="gpt-4.1", reasoning={}, tools=[], temperature=1, max_output_tokens=2048, top_p=1, store=True):
-        self.client = OpenAI(api_key=api_key['API_KEY'])
+        self.client = OpenAI(api_key=os.environ['OPENAI_KEY'])
         self.model = model
         self.reasoning = reasoning
         self.tools = tools
