@@ -2,13 +2,20 @@ import psycopg
 import os
 from data_model import NPC_data
 from psycopg.types.json import Jsonb
+import json
+
+
+with open('json_data/db_key.json', 'r') as f:
+    db_key = json.load(f)
+
+
 class App_DB:
     def __init__(self):
-        self.__dbname = 'postgres'
-        self.__user = 'postgres'
-        self.__password = 'monmdp'
-        self.__host = '127.0.0.1'
-        self.__port = '5432'
+        self.__dbname = db_key["dbname"]
+        self.__user = db_key["user"]
+        self.__password = db_key["password"]
+        self.__host = db_key["host"]
+        self.__port = db_key["port"]
         self.conn = psycopg.connect(dbname=self.__dbname, user=self.__user,
                                      password=self.__password, host=self.__host, port=self.__port)
 

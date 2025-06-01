@@ -63,20 +63,4 @@ CREATE TABLE IF NOT EXISTS user_npc (
 
 );
 
-CREATE OR REPLACE FUNCTION clear_expired_tokens()
-RETURNS trigger  AS $body$
-BEGIN
-IF (SELECT COUNT(*) FROM user_token) > 1000
-THEN DELETE FROM user_token
-WHERE (EXTRACT(epoch FROM CURRENT_TIMESTAMP - created_at) - expire) > 0;
-END IF;
-RETURN NULL
-END;
-$body$
-LANGUAGE plpgsql;
-
-
-CREATE OR REPLACE TRIGGER clear_token
-AFTER INSERT ON user_token
-EXECUTE FUNCTION clear_expired_tokens();
 
