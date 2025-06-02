@@ -12,7 +12,7 @@ class App_DB:
         self.__password = os.environ['DB_GCP_PASSWORD']
         self.__host = "10.112.176.3"
         self.__port = "5432"
-        self.pool = sqlalchemy.create_engine.connect(
+        self.pool = sqlalchemy.create_engine(
             drivername="postgresql+pg8000",
             username=self.__user,
             password=self.__password,
