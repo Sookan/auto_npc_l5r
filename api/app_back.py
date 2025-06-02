@@ -91,13 +91,15 @@ def disconnect_user(request: Request):
 def get_user_npc(npc_id: int):
     db_response = db.select_user_npc(npc_id)
     db_response = {key: value for key, value in zip(NPC_data.model_fields.keys(),db_response)}
+    for i in ["schools", "advantages", "disadvantages", "skills"]:
+        db_response[i] = json.loads(db_response[i])
+    print(db_response)
     return db_response
 
 def del_user_npc(npc_id: int):
     db_response = db.drop_user_npc(npc_id)
+    print(db_response)
     db_response = {key: value for key, value in zip(["npc_id", "clan", "name"],db_response)}
-    for i in ["schools", "advantages", "disadvantages", "skills"]:
-        db_response[i] = json.loads(db_response[i])
     return db_response
 
 def auto_npc_inference(form_data: Form_data):

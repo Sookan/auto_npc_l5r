@@ -57,7 +57,7 @@ class App_DB:
         with self.pool.connect() as cur:
             query = "SELECT * from select_all_user_npc(%s) "
             tmp = cur.exec_driver_sql(query, (user_id,)).fetchall()
-            return tuple(tmp)
+            return tmp
 
     def select_user_npc(self, npc_id):
         with self.pool.connect() as cur:
