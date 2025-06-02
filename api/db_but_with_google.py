@@ -26,13 +26,13 @@ class App_DB:
             query = "SELECT * FROM login_token(%s,%s)"
             tmp = cur.exec_driver_sql(query, (password, email)).fetchone()
             cur.commit()
-            return tuple(tmp)
+            return tmp
 
     def check_user_token(self, user_id, token):
         with self.pool.connect() as cur:
             query = """ SELECT * FROM check_token(%s,%s)"""
             tmp = cur.exec_driver_sql(query, (user_id, token)).fetchone()
-            return tuple(tmp)
+            return tmp
 
     def delete_user_token(self, user_id):
         with self.pool.connect() as cur:
