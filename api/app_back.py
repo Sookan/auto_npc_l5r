@@ -1,3 +1,5 @@
+import json
+
 from db_but_with_google import App_DB
 from fastapi import WebSocket, status, Request
 from fastapi.responses import RedirectResponse
@@ -94,6 +96,8 @@ def get_user_npc(npc_id: int):
 def del_user_npc(npc_id: int):
     db_response = db.drop_user_npc(npc_id)
     db_response = {key: value for key, value in zip(["npc_id", "clan", "name"],db_response)}
+    for i in ["schools", "advantages", "disadvantages", "skills"]:
+        db_response[i] = json.loads(db_response[i])
     return db_response
 
 def auto_npc_inference(form_data: Form_data):
