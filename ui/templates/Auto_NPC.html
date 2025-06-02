@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="{{ url_for('static', path='/css/Auto_NPC.css') }}" rel="stylesheet">
-
-    <script language="JavaScript" src="{{ url_for('static', path='/js/Auto_NPC.js') }}"></script>
-	<script language="JavaScript"  src="{{ url_for('static', path='/js/select_map.js') }}"></script>
-    <script language="JavaScript"  src="{{ url_for('static', path='/js/jquery-3.7.1.min.js') }}"></script>
+    <link href="{{ url_for('static', path='/css/Auto_NPC.css', _external=True) }}" rel="stylesheet">
+    <script language="JavaScript" src="{{ url_for('static', path='/js/Auto_NPC.js', _external=True) }}"></script>
+	<script language="JavaScript"  src="{{ url_for('static', path='/js/select_map.js', _external=True) }}"></script>
+    <script language="JavaScript"  src="{{ url_for('static', path='/js/jquery-3.7.1.min.js', _external=True) }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
