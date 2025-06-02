@@ -1,4 +1,4 @@
-from db import App_DB
+from db_but_with_google import App_DB
 from fastapi import WebSocket, status, Request
 from fastapi.responses import RedirectResponse
 from api_openai_call import Connect_to_openAI_api
