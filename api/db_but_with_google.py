@@ -13,12 +13,13 @@ class App_DB:
         self.__host = "10.112.176.3"
         self.__port = "5432"
         self.pool = sqlalchemy.create_engine(
+            sqlalchemy.engine.url.URL.create(
             drivername="postgresql+pg8000",
             username=self.__user,
             password=self.__password,
             host=self.__host,
             port=self.__port,
-            database=self.__dbname,)
+            database=self.__dbname))
 
 
     def check_user_password(self, email, password):
