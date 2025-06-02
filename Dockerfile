@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt && rm requirements.txt
 COPY api api
 COPY ui ui
 
-EXPOSE 80
+EXPOSE 8080
 
 WORKDIR api
 ENTRYPOINT ["python", "main.py"]
