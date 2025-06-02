@@ -6,7 +6,6 @@ from psycopg.types.json import Jsonb
 
 
 
-
 class App_DB:
     def __init__(self):
         self.__dbname = "postgres"
