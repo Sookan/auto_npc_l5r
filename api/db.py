@@ -12,7 +12,7 @@ class App_DB:
         self.__dbname = "postgres"
         self.__user = "postgres"
         self.__password = os.environ['DB_GCP_PASSWORD']
-        self.__host = "35.195.39.40"
+        self.__host = "10.112.176.3"
         self.__port = "5432"
         self.conn = psycopg.connect(dbname=self.__dbname, user=self.__user,
                                      password=self.__password, host=self.__host, port=self.__port)
