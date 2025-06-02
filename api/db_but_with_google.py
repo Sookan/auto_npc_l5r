@@ -11,7 +11,7 @@ class App_DB:
         self.__dbname = "postgres"
         self.__user = "postgres"
         self.__password = os.environ['DB_GCP_PASSWORD']
-        self.__host = "10.112.176.3"
+        self.__host = "35.195.101.89"
         self.__port = 5432
         self.pool = sqlalchemy.create_engine(
             sqlalchemy.engine.url.URL.create(
