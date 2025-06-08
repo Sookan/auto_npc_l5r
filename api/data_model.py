@@ -7,17 +7,17 @@ class User(BaseModel):
 
 class Form_data(BaseModel):
     earth_cicle: int = 2
-    stamina: int = 2
-    willpower: int = 2
+    earth_traitp: int = 2
+    earth_traitm: int = 2
     air_cicle: int = 2
-    reflexes: int = 2
-    awareness: int = 2
+    air_traitp: int = 2
+    air_traitm: int = 2
     fire_cicle: int = 2
-    agility: int = 2
-    intelligence: int = 2
+    fire_traitp: int = 2
+    fire_traitm: int = 2
     water_cicle: int = 2
-    strength: int = 2
-    perception: int = 2
+    water_traitp: int = 2
+    water_traitm: int = 2
     void: int = 2
     info_sup: str = ''
     clan: str = "crab"
