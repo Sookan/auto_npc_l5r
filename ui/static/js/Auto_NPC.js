@@ -1,8 +1,5 @@
 window.onload = function(){
-const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
-const sidebar_button = document.querySelector('.sidebar-button');
-const sidebar_content = document.querySelector('.sidebar-content');
 const school_bonus_trait = document.getElementById('school_bonus_trait');
 const family_bonus_trait = document.getElementById('family_bonus_trait');
 const form = document.getElementById("stat_form");
@@ -67,7 +64,7 @@ async function sendData() {
       spin.removeClass("hidden")
       try {
         npc_data = formDatajson
-        const response = await fetch(window.location.origin+"/form_result", {
+        const response = await fetch(window.location.origin+"/auto_npc/form_result", {
           method: "POST",
           credentials: 'include',
           headers: {
@@ -99,17 +96,7 @@ async function sendData() {
   $("#submit_bouton").prop("disabled", false);
 }
 
-sidebar_button.onclick = function () {
-    sidebar.classList.toggle('sidebar_small');
-    sidebar_content.classList.toggle('hidden');
-    mainContent.classList.toggle('main-content_large')
-    if (sidebar_button.textContent == ">"){
-        sidebar_button.textContent="<";
-    }else{
-        sidebar_button.textContent=">";
-    }
-};
-sidebar_button.click()
+
 
 document.getElementById("deconnection-button").onclick = function () {
     location.href = "/disconnect";
@@ -443,7 +430,7 @@ async function call_save_npc(){
     if (as_infer){
         var response=false
         try{
-            response = await fetch(window.location.origin+"/save_npc", {
+            response = await fetch(window.location.origin+"/auto_npc/save_npc", {
               method: "POST",
               credentials: 'include',
               headers: {
@@ -479,7 +466,7 @@ function fetch_npc(npc){
 async function call_load_npc(npc_id){
     var response=false
     try{
-        response = await fetch(window.location.origin+"/get_npc/"+npc_id, {
+        response = await fetch(window.location.origin+"/auto_npc/get_npc/"+npc_id, {
           method: "get",
           credentials: 'include',
           headers: {
@@ -546,7 +533,7 @@ function del_npc(){
 async function call_del_npc(npc_id){
     var response=false
     try{
-        response = await fetch(window.location.origin+"/del_npc/"+npc_id, {
+        response = await fetch(window.location.origin+"/auto_npc/del_npc/"+npc_id, {
           method: "POST",
           credentials: 'include',
           headers: {

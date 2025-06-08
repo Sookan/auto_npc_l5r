@@ -1,16 +1,16 @@
-from typing import Annotated, Any
+from typing import Annotated
 from fastapi import FastAPI, Request, Form, Depends, Response
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from app_back import (check_login, check_token, RequiresLoginException, auto_npc_inference, save_user_npc,
+from api.app_back import (check_login, check_token, RequiresLoginException, auto_npc_inference, save_user_npc,
                       get_all_user_npc, get_user_npc, disconnect_user, del_user_npc)
-from data_model import Form_data, NPC_data, save_npc_order_reverse
+from api.data_model import Form_data, NPC_data, save_npc_order_reverse
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="../ui/templates")
-app.mount('/static', StaticFiles(directory="../ui/static"), 'static')
+templates = Jinja2Templates(directory="./ui/templates")
+app.mount('/static', StaticFiles(directory="./ui/static"), 'static')
 
 
 @app.exception_handler(RequiresLoginException)
@@ -55,21 +55,25 @@ async def get_disconnect(request: Request):
     return redirect_response
 
 
-@app.post("/form_result")
+@app.post("/auto_npc/form_result")
 async def form_result(form_data: Form_data, should_redirect: bool = Depends(check_token)):
     return auto_npc_inference(form_data)
 
-@app.post("/save_npc")
+@app.post("/auto_npc/save_npc")
 async def save_npc(npc_data: NPC_data,request: Request, should_redirect: bool = Depends(check_token)):
     return save_user_npc(npc_data,request)
 
-@app.get("/get_npc/{npc_id}")
+@app.get("/auto_npc/get_npc/{npc_id}")
 async def get_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
     return get_user_npc(npc_id)
 
-@app.post("/del_npc/{npc_id}")
+@app.post("/auto_npc/del_npc/{npc_id}")
 async def del_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
     return del_user_npc(npc_id)
+
+@app.get("/E1_DI_GUISTO.pdf")
+async def get_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
+    return FileResponse(path="./static/pdf", filename="E1_DI_GUISTO.pdf", media_type="pdf")
 
 
 if __name__ == "__main__":
