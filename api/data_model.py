@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from typing import Union
-from datetime import datetime
 
 class User(BaseModel):
     token: Union[str, None] = None
