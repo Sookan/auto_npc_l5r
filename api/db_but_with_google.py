@@ -1,5 +1,5 @@
 import os
-from data_model import NPC_data
+from .data_model import NPC_data
 import sqlalchemy
 
 

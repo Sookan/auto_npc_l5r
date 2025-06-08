@@ -9,8 +9,8 @@ from api.data_model import Form_data, NPC_data, save_npc_order_reverse
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="./ui/templates")
-app.mount('/static', StaticFiles(directory="./ui/static"), 'static')
+templates = Jinja2Templates(directory="../ui/templates")
+app.mount('/static', StaticFiles(directory="../ui/static"), 'static')
 
 
 @app.exception_handler(RequiresLoginException)
