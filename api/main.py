@@ -3,9 +3,9 @@ from fastapi import FastAPI, Request, Form, Depends, Response
 from fastapi.responses import RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from api.app_back import (check_login, check_token, RequiresLoginException, auto_npc_inference, save_user_npc,
+from app_back import (check_login, check_token, RequiresLoginException, auto_npc_inference, save_user_npc,
                       get_all_user_npc, get_user_npc, disconnect_user, del_user_npc)
-from api.data_model import Form_data, NPC_data, save_npc_order_reverse
+from data_model import Form_data, NPC_data, save_npc_order_reverse
 
 app = FastAPI()
 

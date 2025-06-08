@@ -1,5 +1,5 @@
 from openai import OpenAI
-from .data_model import Form_data, NPCBackground
+from data_model import Form_data, NPCBackground
 import json
 import os
 
