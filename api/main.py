@@ -71,11 +71,6 @@ async def get_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
 async def del_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
     return del_user_npc(npc_id)
 
-@app.get("/E1_DI_GUISTO.pdf")
-async def get_npc(npc_id: int, should_redirect: bool = Depends(check_token)):
-    return FileResponse(path="./static/pdf", filename="E1_DI_GUISTO.pdf", media_type="pdf")
-
-
 if __name__ == "__main__":
     import uvicorn
 
