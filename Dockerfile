@@ -14,5 +14,4 @@ COPY ui ui
 
 EXPOSE 8080
 
-WORKDIR api
 ENTRYPOINT ["python", "main.py"]
