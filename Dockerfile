@@ -11,7 +11,7 @@ RUN pip install -r requirements.txt && rm requirements.txt
 
 COPY api api
 COPY ui ui
-COPY ./main.py ./main.py
+COPY ./main.py ./
 
 EXPOSE 8080
 
