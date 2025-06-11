@@ -20,7 +20,7 @@ async def exception_handler(request: Request, exc: RequiresLoginException) -> Re
     return redirect
 
 @app.get("/")
-async def serve_spa(request: Request, should_redirect: bool = Depends(check_token)):
+async def serve_spa(request: Request):
     return templates.TemplateResponse(name="index.html", context={"request": request})
 
 @app.get("/login")

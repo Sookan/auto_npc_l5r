@@ -15,9 +15,10 @@ CREATE OR REPLACE TRIGGER clear_token
 AFTER INSERT ON user_token
 EXECUTE FUNCTION clear_expired_tokens();
 
+/* obviously not in the db
 INSERT into ref_user (email, password)
    VALUES  ('test@test.com',crypt('test@test.com',gen_salt('bf',8)));
-
+*/
 /*------------------------------*/
 CREATE OR REPLACE FUNCTION login_token(mdp varchar, mail varchar)
 RETURNS TABLE (
