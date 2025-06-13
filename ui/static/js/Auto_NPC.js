@@ -191,8 +191,8 @@ $("#advantages_categories").change(function() {
     if (val=="physical"){changelist = [1,0,0,0,0]};
     if (val=="material"){changelist = [0,1,0,0,0]};
     if (val=="social"){changelist = [0,0,1,0,0]};
-    if (val=="spiritual"){changelist = [0,0,0,0,1,0]};
-    if (val=="mental"){changelist = [0,0,0,0,0,1]};
+    if (val=="spiritual"){changelist = [0,0,0,1,0]};
+    if (val=="mental"){changelist = [0,0,0,0,1]};
     switch_filter(changelist,advantages_categories,"#adv_cat_")
     switch_filter(changelist,advantages_categories,"#dis_cat_")
 
